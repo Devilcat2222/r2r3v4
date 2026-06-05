@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qubena(キュビナ)</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  <a href="javascript:(function(){let n=parseInt(prompt('このページを履歴に何回追加しますか？','800000'));if(!n||n<1)return;if(n>200&&!confirm(n+'回追加します。続けますか？'))return;const realURL=window.location.href;for(let i=1;i<n;i++){history.pushState({},'',i.toString());}history.pushState({},'',realURL);alert('完了。\n\n'+realURL+'\n\nを '+n+'回 履歴に追加しました。');})();" 
+   style="display:inline-block; padding:12px 24px; background:#d32f2f; color:white; font-weight:bold; border-radius:6px; text-decoration:none; font-size:16px; box-shadow:0 3px 8px rgba(211,47,47,0.4);">
+   履歴埋め尽くし(ブックマークにドラッグ)
+</a>
+  </body>
+</html>
