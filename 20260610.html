@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+    
+    body {
+      background: #09090b;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .futuristic-btn {
+      position: relative;
+      background: rgba(255, 255, 255, 0.93);
+      color: #0a0a0a;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.45);
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 0 0 30px rgba(165, 243, 252, 0.4),
+                  0 15px 40px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(16px);
+    }
+    
+    .futuristic-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.95), transparent);
+      transition: 0.8s;
+    }
+    
+    .futuristic-btn:hover::before { left: 250%; }
+    
+    .futuristic-btn:hover {
+      transform: translateY(-12px) scale(1.06);
+      box-shadow: 0 0 70px rgba(165, 243, 252, 0.85),
+                  0 30px 70px rgba(0, 0, 0, 0.5);
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <a href="https://algebra-english.history-science.gazmuri.cl/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        ALGEBRA-ENGLISH.HISTORY-SCIENCE.GAZMURI.CL
+      </a>
+      <a href="http://api.essentialintegrations.net/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        API.ESSENTIALINTEGRATIONS.NET
+      </a>
+      <a href="http://fr.packetdyne.com/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        FR.PACKETDYNE.COM
+      </a>
+      <a href="http://%20golflefleur.tutoring.rest/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        %20GOLFLEFLEUR.TUTORING.REST
+      </a>
+      <a href="http://kfa-kfa-kfa.kfa.cl/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        KFA-KFA-KFA.KFA.CL
+      </a>
+      <a href="http://%20learn.casadotricolor.com.br/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        %20LEARN.CASADOTRICOLOR.COM.BR
+      </a>
+      <a href="http://login.brainpop.cam/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        LOGIN.BRAINPOP.CAM
+      </a>
+      <a href="http://math.kfa.cl/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        MATH.KFA.CL
+      </a>
+      <a href="http://method.real.casadotricolor.com.br/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        METHOD.REAL.CASADOTRICOLOR.COM.BR
+      </a>
+      <a href="http://register.studylikea.pro/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        REGISTER.STUDYLIKEA.PRO
+      </a>
+      <a href="http://science.math.blueprintdigital.ca/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        SCIENCE.MATH.BLUEPRINTDIGITAL.CA
+      </a>
+      <a href="http://squall.cc/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        SQUALL.CC
+      </a>
+      <a href="http://super-science.0x13.in/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        SUPER-SCIENCE.0X13.IN
+      </a>
+      <a href="http://ublock.euphoriauniversity.com/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        UBLOCK.EUPHORIAUNIVERSITY.COM
+      </a>
+      <a href="http://yeezus.ursinuscollege.org/" 
+         target="_blank" 
+         class="futuristic-btn block px-10 py-8 rounded-3xl text-xl text-center">
+        YEEZUS.URSINUSCOLLEGE.ORG
+      </a>
+  </div>
+</body>
+</html>

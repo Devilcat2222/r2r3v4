@@ -13,11 +13,33 @@
     body { background: #ffffff; min-height: 100vh; font-family: 'Noto Sans JP', 'Space Grotesk', sans-serif; }
     
     .futuristic-btn {
-      background: #ffffff; color: #0a0a0a; font-weight: 600; border: 2px solid #e5e5e5;
-      padding: 14px 28px; border-radius: 4px; text-align: center; display: block;
-      text-decoration: none; transition: all 0.4s;
+      background: #ffffff; 
+      color: #0a0a0a; 
+      font-weight: 600; 
+      border: 2px solid #e5e5e5;
+      padding: 14px 28px; 
+      border-radius: 4px; 
+      text-align: center; 
+      display: block;
+      text-decoration: none; 
+      transition: all 0.4s;
     }
-    .futuristic-btn:hover { transform: translateY(-5px); border-color: #67e8f9; background: #f8f9fa; }
+    .futuristic-btn:hover { 
+      transform: translateY(-5px); 
+      border-color: #67e8f9; 
+      background: #f8f9fa; 
+    }
+
+    .latest::after {
+      content: "★ 最新";
+      font-size: 0.75rem;
+      background: #67e8f9;
+      color: #111111;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      margin-left: 10px;
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -41,11 +63,13 @@
       <div onclick="panic()" style="font-family: 'Space Grotesk'; font-size: 4.8rem; font-weight: 700; letter-spacing: -0.08em; background: linear-gradient(90deg, #111, #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">R2R3</div>
     </div>
 
-    <div class="space-y-3">
+    <div id="links-container" class="space-y-3">
       <a href="bookmarklet.html" class="futuristic-btn">ツール</a>
       <a href="20260310.html" class="futuristic-btn">2026/03/10</a>
       <a href="20260311.html" class="futuristic-btn">2026/03/11</a>
-      <a href="20260527.html" class="futuristic-btn">2026/05/27 ★</a>
+      <a href="20260527.html" class="futuristic-btn">2026/05/27</a>
+      <a href="20260610.html" class="futuristic-btn">2026/06/10(広告無しのやつだけ)</a>
+      <a href="2026-06-10truf.html" class="futuristic-btn">2026-06-10(truffledだけ)</a>
     </div>
 
     <div class="mt-10 text-center">
@@ -59,10 +83,11 @@
     let fails = 3;
 
     function v() {
-      const i = document.getElementById('pin').value.trim().toLowerCase();
+      const input = document.getElementById('pin').value.trim().toLowerCase();
       const err = document.getElementById('e');
 
-      if (i === "r2r3r4") {
+    
+      if (btoa(input + "x9k2m") === "cjJyM3I0eDlrMm0=") {
         document.getElementById('p-screen').style.display = 'none';
         document.getElementById('main').classList.remove('hidden');
       } else {
@@ -91,6 +116,16 @@
         document.getElementById('ct').textContent = "✅ Cloaked";
       }
     }
+
+    // Auto apply "最新" to the last link
+    window.onload = function() {
+      const container = document.getElementById('links-container');
+      const links = container.querySelectorAll('a');
+      if (links.length > 0) {
+        links.forEach(link => link.classList.remove('latest'));
+        links[links.length - 1].classList.add('latest');
+      }
+    };
 
     document.getElementById('pin').addEventListener('keypress', e => {
       if (e.key === 'Enter') v();
