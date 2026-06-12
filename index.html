@@ -64,7 +64,10 @@
     </div>
 
     <div id="links-container" class="space-y-3">
+      <!-- Tool button stays at top -->
       <a href="bookmarklet.html" class="futuristic-btn">ツール</a>
+      
+      <!-- Other links will be auto-sorted (newest first) -->
       <a href="20260310.html" class="futuristic-btn">2026/03/10</a>
       <a href="20260311.html" class="futuristic-btn">2026/03/11</a>
       <a href="20260527.html" class="futuristic-btn">2026/05/27</a>
@@ -87,7 +90,6 @@
       const input = document.getElementById('pin').value.trim().toLowerCase();
       const err = document.getElementById('e');
 
-    
       if (btoa(input + "x9k2m") === "cjJyM3I0eDlrMm0=") {
         document.getElementById('p-screen').style.display = 'none';
         document.getElementById('main').classList.remove('hidden');
@@ -118,13 +120,35 @@
       }
     }
 
-    // Auto apply "最新" to the last link
+    // Auto-sort: Tool at top → Newest right below → Oldest at bottom
     window.onload = function() {
       const container = document.getElementById('links-container');
-      const links = container.querySelectorAll('a');
-      if (links.length > 0) {
-        links.forEach(link => link.classList.remove('latest'));
-        links[links.length - 1].classList.add('latest');
+      let links = Array.from(container.querySelectorAll('a'));
+      
+      if (links.length > 1) {
+        const toolBtn = links.find(link => link.textContent.includes('ツール'));
+        let otherLinks = links.filter(link => !link.textContent.includes('ツール'));
+
+        // Clear container
+        container.innerHTML = '';
+
+        // 1. Tool button at top
+        if (toolBtn) container.appendChild(toolBtn);
+
+        // 2. Newest on top (reverse the order)
+        if (otherLinks.length > 0) {
+          otherLinks.forEach(link => link.classList.remove('latest'));
+          
+          // Reverse so newest comes first
+          const sortedLinks = otherLinks.reverse();
+          
+          // Add "最新" tag to the first one (newest)
+          if (sortedLinks.length > 0) {
+            sortedLinks[0].classList.add('latest');
+          }
+
+          sortedLinks.forEach(link => container.appendChild(link));
+        }
       }
     };
 
